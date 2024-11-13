@@ -1,0 +1,26 @@
+body {
+    font-family: Arial; 
+    font-size: 16px;
+    line-height: 1.6;
+}
+  
+p {
+    margin: 20px 0;   
+}
+  
+.large {
+    font-size: 2em; 
+}
+  
+.blue {
+    color: #00F;
+}
+
+.banner {
+    background-color: #F2F2F2;
+    background-image: url('darksoulsbackground.jpg');
+    background-size: cover; 
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+}
