@@ -24,3 +24,19 @@ p {
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
 }
+
+/* Mobile */
+@media (max-width: 500px) {
+    .content {
+      width: 90%;
+      font-size: 14px;
+    }
+}
+
+/* Tablet */  
+@media (max-width: 768px) {
+    .content {
+      width: 80%;
+      font-size: 16px; 
+    }
+}
