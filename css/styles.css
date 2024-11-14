@@ -38,12 +38,12 @@ html, body {
 }
 
 .banner {
-  background-color: #F2F2F2;
-  background-image: url('images/spacecatboys.jpg');
-  background-size: cover; 
-  height: 300px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+    /* TODO: make this work */
+    background-image: url('images/spacecatboys.jpg');
+    background-size: cover; 
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
 }
 
 .wrapper {
