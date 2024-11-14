@@ -36,8 +36,13 @@ html, body {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.body {
-    background: linear-gradient(to bottom, rgba(231, 240, 245, 1) 0%, rgba(170, 221, 235, 1) 100%);
+.banner {
+  background-color: #F2F2F2;
+  background-image: url('images/spacecatboys.jpg');
+  background-size: cover; 
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
 }
 
 .wrapper {
