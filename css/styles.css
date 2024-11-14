@@ -34,6 +34,7 @@ html, body {
 
 .social-links a:hover {
     background-color: rgba(0, 0, 0, 0.1);
+    /* TODO: beveled hover shape */
 }
 
 .banner {
