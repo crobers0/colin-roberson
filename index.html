@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <title>Colin Roberson</title>
   <link rel="stylesheet" href="css/styles.css">
@@ -8,38 +9,48 @@
 </head>
 <body>
   <script src="js/oneko.js"></script>
-  <div class="wrapper">
-    
-    <div class="right">
-      <img class="profile-picture" src="images/profile_pic.jpg" width="300"/>
-      <h1 class="name">
-        <img class="profile-picture" src="images/favicon.jpg" width="50"/>
-        Colin Roberson
-      </h1>
-      <h4 class="subtitle">
-        <ul class="social-links">
-          <a href="https://www.cs.purdue.edu/undergraduate/index.html">Computer Science @ Purdue University</a>
-        </ul>
-      </h4>
-    </div>
-    
-    <div class="left">
-      <p class="bio">
-        Hi :) I'm a third-year undergraduate at Purdue University studying CS, Bioinformatics, and Korean.
-      </p>
-      <p class="bio">
-        I can be happy learning quite about anything, and I hope to learn quite about everything in my lifetime.
-        Right now, I'm passionate about machine learning, mathematics, music, education, biology, video games, social and economic justice, tabletop RPGs, literature, visual arts, and foreign languages.
-      </p>
-     
-      <div>
-        <a href="https://github.com/crobers0"><img src="images/github.png" class="icon-img"></a>
-        <a href="https://www.linkedin.com/in/colin-d-roberson"><img src="images/linkedin.png" class="icon-img"></a>
-        <a href="https://www.goodreads.com/user/show/179465394"><img src="images/goodreads.png" class="icon-img"></a>
-        <a href="https://open.spotify.com/user/uadw099?si=6da72799e99d4322"><img src="images/spotify.png" class="icon-img"></a>
-      </div>
-    </div>
 
+  <div class="header" id="myHeader">
+    <img class="header-img" src="images/spacecatboys.png">
   </div>
+
+  <img class="profile-picture" src="images/profile_pic.jpg" width="300"/>
+  <h1 class="name">
+    Colin Roberson
+  </h1>
+  <ul class="social-links">
+    <a href="https://www.cs.purdue.edu/undergraduate/index.html">Computer Science @ Purdue University</a>
+  </ul>
+    
+  <p class="bio">
+    Hi :) I'm a third-year undergraduate at Purdue University studying CS, Bioinformatics, and Korean.
+  </p>
+  <p class="bio">
+    I can be happy learning quite about anything, and I hope to learn quite about everything in my lifetime.
+    Right now, I'm passionate about machine learning, mathematics, music, education, biology, video games, social and economic justice, tabletop RPGs, literature, visual arts, and foreign languages.
+  </p>
+     
+  <div>
+    <a href="https://github.com/crobers0"><img src="images/github.png" class="icon-img"></a>
+    <a href="https://www.linkedin.com/in/colin-d-roberson"><img src="images/linkedin.png" class="icon-img"></a>
+    <a href="https://www.goodreads.com/user/show/179465394"><img src="images/goodreads.png" class="icon-img"></a>
+    <a href="https://open.spotify.com/user/uadw099?si=6da72799e99d4322"><img src="images/spotify.png" class="icon-img"></a>
+  </div>
+  
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("myHeader");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+  </script>
+
 </body>
 </html>
