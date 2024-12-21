@@ -18,7 +18,7 @@ html, body {
   /* The image used */
   background-color: rgb(51, 57, 69);
   /* Set a specific height */
-  height: 100%;
+  height: 50%;
   color: white;
   font-family:'Courier New', Courier, monospace;
   font-size: 80px;
@@ -29,6 +29,46 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+  font-family:'Courier New', Courier, monospace;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+  font-family:'Courier New', Courier, monospace;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.icon-img {
+  width: 20px;
+  height: 20px;
+}
+
+.div-icons {
+  background-color: white;
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width:1160px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
 }
 
 /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
