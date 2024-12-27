@@ -10,86 +10,89 @@ html, body {
     color: white;
 }
 
-.profile-picture {
-    border-radius: 50%;
-}
-
-.parallax {
-  /* The image used */
-  background-color: rgb(51, 57, 69);
-  /* Set a specific height */
-  height: 50%;
-  color: white;
-  font-family:'Courier New', Courier, monospace;
-  font-size: 80px;
-  text-align: center;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-a:link {
+#typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid green;
+  white-space: nowrap;
+  letter-spacing: .15em;
+  animation: typewriter 4s steps(40, end);
+  font-size: 24px;
   color: green;
-  background-color: transparent;
-  text-decoration: none;
-  font-family:'Courier New', Courier, monospace;
 }
 
-a:visited {
-  color: pink;
-  background-color: transparent;
-  text-decoration: none;
-  font-family:'Courier New', Courier, monospace;
-}
-
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
-  font-family:'Courier New', Courier, monospace;
-}
-
-.icon-img {
-  width: 20px;
-  height: 20px;
-}
-
-.div-icons {
-  background-color: white;
-}
-
-.wrapper {
-  margin-right: auto;
-  margin-left: auto;
-  max-width:1160px;
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 10px;
-}
-
-/* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
+/* Typewriter animation */
+@keyframes typewriter {
+  from {
+    width: 0;
   }
+  to {
+    width: 100%;
+  }
+}
+
+.container {  
+  display: grid;
+  grid-template-columns: 0.3fr 2.4fr 0.3fr;
+  grid-template-rows: 1.7fr 0.3fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". sprite ."
+    ". speech ."
+    ". options .";
+}
+
+.sprite { 
+  grid-area: sprite; 
+}
+
+.speech { 
+  grid-area: speech; 
+}
+
+.options {  
+  display: grid;
+  grid-template-columns: 0.6fr 1.2fr 1.2fr 1.2fr 1.2fr 0.6fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". option_a . . option_d ."
+    ". . option_b option_c . ."
+    ". . . . . ."
+    ". . . . . .";
+  grid-area: options;
+}
+
+.option_a { 
+  grid-area: option_a; 
+}
+
+.option_c { 
+  grid-area: option_c; 
+}
+
+.option_b { 
+  grid-area: option_b; 
+}
+
+.option_d { 
+  grid-area: option_d; 
 }
 
 /* Mobile */
 @media (max-width: 500px) {
-    .content {
-      width: 90%;
-      font-size: 14px;
-    }
+  .content {
+    width: 90%;
+    font-size: 14px;
+  }
 }
 
 /* Tablet */  
 @media (max-width: 768px) {
-    .content {
-      width: 80%;
-      font-size: 16px; 
-    }
+  .content {
+    width: 80%;
+    font-size: 16px; 
+  }
 }

@@ -1,11 +1,2 @@
-var i = 0;
-var txt = 'Lorem ipsum dummy text blabla.';
-var speed = 50;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("typewriter").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
+document.getElementById("typewriter")
+  .textContent = "Hi! I'm Colin. Welcome to my website!"
