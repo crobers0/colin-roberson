@@ -1,23 +1,16 @@
-html, body {
-    font-family: Arial; 
-    font-size: 16px;
-    line-height: 1.6;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Open Sans', sans-serif;
-    background-color:  rgb(51, 57, 69);
-    color: white;
+body {
+  text-align: center;
+  background-color: honeydew;
 }
 
 #typewriter {
   display: inline-block;
   overflow: hidden;
-  border-right: .15em solid green;
   white-space: nowrap;
-  letter-spacing: .15em;
+  letter-spacing: 0.15em;
   animation: typewriter 4s steps(40, end);
-  font-size: 24px;
+  font-size: 10px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: green;
 }
 
@@ -31,54 +24,111 @@ html, body {
   }
 }
 
-.container {  
+.container {
   display: grid;
-  grid-template-columns: 0.3fr 2.4fr 0.3fr;
-  grid-template-rows: 1.7fr 0.3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 1.8fr 0.8fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    ". sprite ."
-    ". speech ."
-    ". options .";
+    ". . . ."
+    "f1 sprite sprite f4"
+    "f2 f2 f3 f3"
+    ". . . .";
+  margin: 0 auto;
+  width: 50%;
+  padding-top: 15%;
+  zoom: 150%;
 }
 
-.sprite { 
-  grid-area: sprite; 
-}
-
-.speech { 
-  grid-area: speech; 
-}
-
-.options {  
+.sprite {
   display: grid;
-  grid-template-columns: 0.6fr 1.2fr 1.2fr 1.2fr 1.2fr 0.6fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.7fr 0.3fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    ". option_a . . option_d ."
-    ". . option_b option_c . ."
-    ". . . . . ."
-    ". . . . . .";
-  grid-area: options;
+    "head"
+    "speech";
+  grid-area: sprite;
 }
 
-.option_a { 
-  grid-area: option_a; 
+.head {
+  grid-area: head;
 }
 
-.option_c { 
-  grid-area: option_c; 
+.speech {
+  grid-area: speech;
 }
 
-.option_b { 
-  grid-area: option_b; 
+.f1 {
+  display: grid;
+  grid-template-columns: 0.7fr 2fr 0.3fr;
+  grid-template-rows: 1fr 2.1fr 0.6fr 0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". option_a ."
+    ". . .";
+  grid-area: f1;
 }
 
-.option_d { 
-  grid-area: option_d; 
+.option_a {
+  grid-area: option_a;
+}
+
+.f2 {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+  grid-template-rows: 0.5fr 1fr 1.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". option_b ."
+    ". . .";
+  grid-area: f2;
+}
+
+.option_b {
+  grid-area: option_b;
+}
+
+.f3 {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1.2fr;
+  grid-template-rows: 0.5fr 1fr 1.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". option_c ."
+    ". . .";
+  grid-area: f3;
+}
+
+.option_c {
+  grid-area: option_c;
+}
+
+.f4 {
+  display: grid;
+  grid-template-columns: 0.3fr 2fr 0.7fr;
+  grid-template-rows: 1fr 2.1fr 0.6fr 0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". option_d ."
+    ". . .";
+  grid-area: f4;
+}
+
+.option_d {
+  grid-area: option_d;
 }
 
 /* Mobile */
@@ -89,10 +139,10 @@ html, body {
   }
 }
 
-/* Tablet */  
+/* Tablet */
 @media (max-width: 768px) {
   .content {
     width: 80%;
-    font-size: 16px; 
+    font-size: 16px;
   }
 }
