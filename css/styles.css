@@ -9,9 +9,9 @@ body {
   white-space: nowrap;
   letter-spacing: 0.15em;
   animation: typewriter 4s steps(40, end);
-  font-size: 10px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: green;
+  font-family: "Pixelify Sans", serif;
+  font-size: 14px;
+  font-weight: 200;
 }
 
 /* Typewriter animation */
@@ -129,6 +129,27 @@ body {
 
 .option_d {
   grid-area: option_d;
+}
+
+.cloud-button-container {
+  background-image: url(images\cloud.png);
+}
+
+.cloud-button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-family: "Pixelify Sans", serif;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.cloud-button img {
+  vertical-align: center;
+  margin-right: 5px;
 }
 
 /* Mobile */
