@@ -8,9 +8,9 @@ body {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0.15em;
-  animation: typewriter s steps(30, end);
+  animation: typewriter 3s steps(30, end);
   font-family: "Pixelify Sans", serif;
-  font-size: 8px;
+  font-size: 14px;
   font-weight: 200;
 }
 
@@ -24,127 +24,78 @@ body {
   }
 }
 
-.container {
+.container {  
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.4fr 1.8fr 0.8fr 1fr;
+  grid-template-columns: 0.3fr 2.4fr 0.3fr;
+  grid-template-rows: 1.5fr 0.8fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    ". . . ."
-    "f1 sprite sprite f4"
-    "f2 f2 f3 f3"
-    ". . . .";
+    ". frame ."
+    ". options .";
   margin: 0 auto;
-  width: 50%;
+  width: 80%;
   padding-top: 15%;
-  zoom: 150%;
+  zoom: 200%;
 }
 
-.sprite {
+.frame {  
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1.7fr 0.3fr;
+  grid-template-rows: 1.8fr 0.2fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
     "head"
     "speech";
-  grid-area: sprite;
+  grid-area: frame;
 }
 
-.head {
-  grid-area: head;
-}
+.head { grid-area: head; }
 
-.speech {
-  grid-area: speech;
-}
+.speech { grid-area: speech; }
 
-.f1 {
+.options {  
   display: grid;
-  grid-template-columns: 0.7fr 2fr 0.3fr;
-  grid-template-rows: 1fr 2.1fr 0.6fr 0.3fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    ". . ."
-    ". . ."
-    ". option_a ."
-    ". . .";
-  grid-area: f1;
+    "option_a . . option_d"
+    ". option_b option_c ."
+    ". . . .";
+  grid-area: options;
 }
 
-.option_a {
+.option_a { 
   grid-area: option_a;
 }
 
-.f2 {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 0.8fr;
-  grid-template-rows: 0.5fr 1fr 1.5fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". option_b ."
-    ". . .";
-  grid-area: f2;
-}
-
-.option_b {
+.option_b { 
   grid-area: option_b;
 }
 
-.f3 {
-  display: grid;
-  grid-template-columns: 0.8fr 1fr 1.2fr;
-  grid-template-rows: 0.5fr 1fr 1.5fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". option_c ."
-    ". . .";
-  grid-area: f3;
-}
-
-.option_c {
+.option_c { 
   grid-area: option_c;
 }
 
-.f4 {
-  display: grid;
-  grid-template-columns: 0.3fr 2fr 0.7fr;
-  grid-template-rows: 1fr 2.1fr 0.6fr 0.3fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . ."
-    ". . ."
-    ". option_d ."
-    ". . .";
-  grid-area: f4;
-}
-
-.option_d {
+.option_d { 
   grid-area: option_d;
 }
 
 .cloud-button {
-  cursor: pointer;
-  background-image: url("cloud.png");
+  background-image: url("cloud.gif");
   background-color: transparent;
   background-position: center;
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+  cursor: pointer;
   border: none;
   text-align: center;
   font-family: "Pixelify Sans", serif;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 200;
-  width: 100%;
-  height: 100%;
 }
 
 /* Mobile */

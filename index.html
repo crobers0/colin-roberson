@@ -10,9 +10,9 @@
 </head>
 <body>
   <div class="container">
-    <div class="sprite">
+    <div class="frame">
       <div class="head">
-        <img src="images\avatar.png"> 
+        <img src="images\avatar.gif">
       </div>
       <div class="speech">
         <div id="typewriter"></div>
@@ -22,34 +22,45 @@
         </script>
       </div>
     </div>
-    <div class="f1">
+    <div class="options">
       <div class="option_a">
-        <button class="cloud-button" onclick="aboutme()">
-          About Me
+        <button class="cloud-button" id="about-button">
+          About
         </button>
       </div>
-    </div>
-    <div class="f2">
       <div class="option_b">
-        <button class="cloud-button" onclick="projects()">
+        <button class="cloud-button" id="projects-button">
           Projects
         </button>
       </div>
-    </div>
-    <div class="f3">
       <div class="option_c">
-        <button class="cloud-button" onclick="experience()">
+        <button class="cloud-button" id="experience-button">
           Experience
         </button>
       </div>
-    </div>
-    <div class="f4">
       <div class="option_d">
-        <button class="cloud-button" onclick="socials()">
+        <button class="cloud-button" id="socials-button">
           Socials
         </button>
       </div>
     </div>
   </div>
+  <script>
+    // aboutButton
+    var aboutButton = document.getElementById("about-button");
+    aboutButton.addEventListener('click', function() {
+      window.location.href = "./pages/about.html";
+    });
+
+    // projectsButton
+    var projectsButton = document.getElementById("projects-button");
+
+    // experienceButton
+    var experienceButton = document.getElementById("experience-button");
+
+    // socialsButton
+    var socialsButton = document.getElementById("socials-button");
+    
+  </script>
 </body>
 </html>
