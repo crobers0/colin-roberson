@@ -14,7 +14,6 @@ body {
   font-weight: 200;
 }
 
-/* Typewriter animation */
 @keyframes typewriter {
   from {
     width: 0;
@@ -51,6 +50,42 @@ body {
   grid-area: frame;
 }
 
+@keyframes c-to-l {
+  from {
+    translate: none;
+  }
+  to {
+    translate: -50% 0;
+  }
+}
+
+@keyframes c-to-r {
+  from {
+    translate: none;
+  }
+  to {
+    translate: 50% 0;
+  }
+}
+
+@keyframes l-to-c {
+  from {
+    translate: -50% 0;
+  }
+  to {
+    translate: none;
+  }
+}
+
+@keyframes r-to-c {
+  from {
+    translate: 50% 0;
+  }
+  to {
+    translate: none;
+  }
+}
+
 .head { grid-area: head; }
 
 .speech { grid-area: speech; }
@@ -66,6 +101,28 @@ body {
     ". option_b option_c ."
     ". . . .";
   grid-area: options;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    display: grid;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    display: grid;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
 }
 
 .option_a { 
@@ -96,6 +153,10 @@ body {
   font-family: "Pixelify Sans", serif;
   font-size: 10px;
   font-weight: 200;
+}
+
+.cloud-button:hover {
+  transform: scale(110%);
 }
 
 /* Mobile */

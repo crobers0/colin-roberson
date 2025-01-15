@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="frame">
+    <div class="frame" id="frame">
       <div class="head">
         <img src="images\avatar.gif">
       </div>
@@ -22,7 +22,7 @@
         </script>
       </div>
     </div>
-    <div class="options">
+    <div class="options" id="options">
       <div class="option_a">
         <button class="cloud-button" id="about-button">
           About
@@ -49,18 +49,46 @@
     // aboutButton
     var aboutButton = document.getElementById("about-button");
     aboutButton.addEventListener('click', function() {
-      window.location.href = "./pages/about.html";
+      showHide();
+      slideFrame(0);
     });
-
     // projectsButton
     var projectsButton = document.getElementById("projects-button");
-
     // experienceButton
     var experienceButton = document.getElementById("experience-button");
-
     // socialsButton
     var socialsButton = document.getElementById("socials-button");
-    
+    // fade options
+    var show = true;
+    function showHide() {
+      let optionsElem = document.getElementById("options");
+      if (show == true) {
+        optionsElem.style.animation = "2s ease-out fade-out";
+        show = false;
+      } else {
+        optionsElem.style.animation = "2s ease-out fade-in";
+        show = true;
+      }
+    }
+    // slide frame
+    function slideFrame(mode) {
+      let frameElem = document.getElementById("frame");
+      switch(mode) {
+        case 0: { // c-to-l
+          frameElem.style.animation = "c-to-l 2s ease-in";
+          break;
+        }
+        case 1: { // l-to-c
+          break;
+        }
+        case 2: { // c-to-r
+          break;
+        }
+        case 3: { // r-to-c
+          break;
+        }
+      }
+    }
   </script>
 </body>
 </html>
