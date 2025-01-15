@@ -54,19 +54,31 @@
     });
     // projectsButton
     var projectsButton = document.getElementById("projects-button");
+    projectsButton.addEventListener('click', function() {
+      showHide();
+      slideFrame(0);
+    })
     // experienceButton
     var experienceButton = document.getElementById("experience-button");
+    experienceButton.addEventListener('click', function() {
+      showHide();
+      slideFrame(2);
+    })
     // socialsButton
     var socialsButton = document.getElementById("socials-button");
+    socialsButton.addEventListener('click', function() {
+      showHide();
+      slideFrame(2);
+    })
     // fade options
     var show = true;
     function showHide() {
       let optionsElem = document.getElementById("options");
       if (show == true) {
-        optionsElem.style.animation = "2s ease-out fade-out";
+        optionsElem.style.animation = "2s ease-out fade-out forwards";
         show = false;
       } else {
-        optionsElem.style.animation = "2s ease-out fade-in";
+        optionsElem.style.animation = "2s ease-out fade-in forwards";
         show = true;
       }
     }
@@ -75,13 +87,14 @@
       let frameElem = document.getElementById("frame");
       switch(mode) {
         case 0: { // c-to-l
-          frameElem.style.animation = "c-to-l 2s ease-in";
+          frameElem.style.animation = "c-to-l 2s ease-in forwards";
           break;
         }
         case 1: { // l-to-c
           break;
         }
         case 2: { // c-to-r
+          frameElem.style.animation = "c-to-r 2s ease-in forwards";
           break;
         }
         case 3: { // r-to-c
