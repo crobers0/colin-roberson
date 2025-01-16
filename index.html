@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container" >
     <div class="frame" id="frame">
       <div class="head">
         <img src="images\avatar.gif">
@@ -73,12 +73,12 @@
     // fade options
     var show = true;
     function showHide() {
-      let optionsElem = document.getElementById("options");
+      let buttonsElem = document.getElementsByClassName("cloud-button");
       if (show == true) {
-        optionsElem.style.animation = "2s ease-out fade-out forwards";
+        buttonsElem.style.animation = "2s ease-out fade-out forwards";
         show = false;
       } else {
-        optionsElem.style.animation = "2s ease-out fade-in forwards";
+        buttonsElem.style.animation = "2s ease-out fade-in forwards";
         show = true;
       }
     }
@@ -91,6 +91,7 @@
           break;
         }
         case 1: { // l-to-c
+          frameElem.style.animation = "l-to-c 2s ease-in forwards";
           break;
         }
         case 2: { // c-to-r
@@ -98,6 +99,7 @@
           break;
         }
         case 3: { // r-to-c
+          frameElem.style.animation = "r-to-c 2s ease-in forwards";
           break;
         }
       }

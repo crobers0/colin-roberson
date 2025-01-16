@@ -27,8 +27,6 @@ body {
   display: grid;
   grid-template-columns: 0.3fr 2.4fr 0.3fr;
   grid-template-rows: 1.5fr 0.8fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
   grid-template-areas:
     ". frame ."
     ". options .";
@@ -42,8 +40,6 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1.8fr 0.2fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
   grid-template-areas:
     "head"
     "speech";
@@ -86,9 +82,13 @@ body {
   }
 }
 
-.head { grid-area: head; }
+.head { 
+  grid-area: head; 
+}
 
-.speech { grid-area: speech; }
+.speech { 
+  grid-area: speech;  
+}
 
 .options {  
   display: grid;
@@ -101,28 +101,6 @@ body {
     ". option_b option_c ."
     ". . . .";
   grid-area: options;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    display: none;
-  }
-  to {
-    opacity: 1;
-    display: grid;
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-    display: grid;
-  }
-  to {
-    opacity: 0;
-    display: none;
-  }
 }
 
 .option_a { 
@@ -142,6 +120,7 @@ body {
 }
 
 .cloud-button {
+  display: inline-block;
   background-image: url("cloud.gif");
   background-color: transparent;
   background-position: center;
@@ -159,9 +138,31 @@ body {
   transform: scale(110%);
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    display: inline-block;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    display: inline-block;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
 /* Mobile */
 @media (max-width: 500px) {
-  .content {
+  .body {
     width: 90%;
     font-size: 14px;
   }
@@ -169,7 +170,7 @@ body {
 
 /* Tablet */
 @media (max-width: 768px) {
-  .content {
+  .body {
     width: 80%;
     font-size: 16px;
   }
