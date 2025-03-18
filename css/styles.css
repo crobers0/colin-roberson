@@ -8,20 +8,36 @@ body {
 #typewriter {
   display: inline-block;
   overflow: hidden;
+  border-right: .15em #1f230c;
   white-space: nowrap;
   letter-spacing: 0.15em;
-  animation: typewriter 3s steps(30, end);
-  font-weight: 200;
+  animation: typewriter 4s steps(40, end), blink-carat .75s step-end infinite;
+  font-size: 14px;
   font-family: monaco, Consolas, "Lucida Console", monospace;
   color: #1f230c;
+  text-wrap: stable;
 }
 
 @keyframes typewriter {
-  from {
+  from
+  {
     width: 0;
   }
   to {
     width: 100%;
+  }
+}
+
+/* Cursor blink animation */
+@keyframes blink-caret {
+  from,
+  to
+  {
+      border-color: transparent;
+  }
+  50%
+  {
+      border-color: #1f230c;
   }
 }
 
@@ -102,14 +118,14 @@ body {
   border-style: groove;
 }
 
-.button_b { 
-  grid-area: button_b; 
+.button_a { 
+  grid-area: button_a; 
   border-color: #1f230c;
   border-style: groove;
 }
 
-.button_a { 
-  grid-area: button_a; 
+.button_b { 
+  grid-area: button_b; 
   border-color: #1f230c;
   border-style: groove;
 }
@@ -212,9 +228,6 @@ body {
 
 .retro-button {
   background-color: transparent;
-  background-position: center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
   cursor: pointer;
   text-align: center;
   font-family: monaco, Consolas, "Lucida Console", monospace;

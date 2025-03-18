@@ -9,7 +9,7 @@
   <div class="container">
     <div class="computer">
       <div class="screen">
-        <div class="dialogue">
+        <div class="dialogue" id="dialogue">
           <div id="typewriter"></div>
             <script>
               document.getElementById("typewriter").textContent = "hello";
@@ -17,25 +17,35 @@
         </div>
       </div>
       <div class="panel">
-        <div class="button_b">
-
-        </div>
         <div class="button_a">
-
+          <button class="retro-button" id="about-button">
+            ABOUT
+          </button>
+        </div>
+        <div class="button_b">
+          <button class="retro-button" id="projects-button">
+            PROJECTS
+          </button>
         </div>
         <div class="button_c">
-
+          <button class="retro-button" id="experience-button">
+            EXPERIENCE
+          </button>
         </div>
         <div class="button_d">
-
+          <button class="retro-button" id="socials-button">
+            SOCIALS
+          </button>
         </div>
         <div class="avatar_frame">
-
+          <img src="images\avatar.gif">
         </div>
       </div>
       <div class="home_panel">
         <div class="home_button">
-
+          <button class="retro-button">
+            HOME
+          </button>
         </div>
       </div>
       <div class="light_panel">
@@ -46,18 +56,24 @@
         </div>
         <div class="turn_on">
           <div class="on_button">
-
+            <button class="retro-button">
+              ON
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <script>
+    // todo: loading scren (prompt turn on button, "initializing colin.exe...")
     // aboutButton
     var aboutButton = document.getElementById("about-button");
+    var aboutString = 'Hi :) I\'m a third-year undergraduate at Purdue University studying CS, Bioinformatics,' +
+      ' and Korean. I can be happy learning quite about anything, and I hope to learn quite about everything in' + 
+      'my lifetime. Right now, I\'m passionate about machine learning, mathematics, music, biology, video games, ' +
+      'social and economic justice, tabletop RPGs, literature, visual arts, and foreign languages.'
     aboutButton.addEventListener('click', function() {
-      change_speech("Bakalicious");
-      load_page("pages/about.html")
+      change_speech(aboutString);
     });
     // projectsButton
     var projectsButton = document.getElementById("projects-button");
@@ -77,7 +93,7 @@
     // update speech typewriter
     // MUST escape / script tag, even if its in quotes or anything similar, by \ + / script
     function change_speech(text) {
-      let speech_var = document.getElementById("speech");
+      let speech_var = document.getElementById("dialogue");
       speech_var.innerHTML = `<div id="typewriter"></div>
         <script>document.getElementById("typewriter").textContent = "${text}";<\/script>`;
       nodeScriptReplace(speech_var);
