@@ -3,45 +3,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <title>Colin Roberson</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container" >
-    <div class="frame" id="frame">
-      <div class="head">
-        <img src="images\avatar.gif">
+  <div class="container">
+    <div class="computer">
+      <div class="screen">
+        <div class="dialogue">
+          <div id="typewriter"></div>
+            <script>
+              document.getElementById("typewriter").textContent = "hello";
+            </script>
+        </div>
       </div>
-      <div class="speech" id="speech">
-        <div id="typewriter"></div>
-        <script>
-          document.getElementById("typewriter")
-            .textContent = "Hi! I'm Colin!";
-        </script>
+      <div class="panel">
+        <div class="button_b">
+
+        </div>
+        <div class="button_a">
+
+        </div>
+        <div class="button_c">
+
+        </div>
+        <div class="button_d">
+
+        </div>
+        <div class="avatar_frame">
+
+        </div>
       </div>
-    </div>
-    <div class="options" id="options">
-      <div class="option_a">
-        <button class="cloud-button" id="about-button">
-          About
-        </button>
+      <div class="home_panel">
+        <div class="home_button">
+
+        </div>
       </div>
-      <div class="option_b">
-        <button class="cloud-button" id="projects-button">
-          Projects
-        </button>
-      </div>
-      <div class="option_c">
-        <button class="cloud-button" id="experience-button">
-          Experience
-        </button>
-      </div>
-      <div class="option_d">
-        <button class="cloud-button" id="socials-button">
-          Socials
-        </button>
+      <div class="light_panel">
+        <div class="light">
+          <div class="on_light">
+
+          </div>
+        </div>
+        <div class="turn_on">
+          <div class="on_button">
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -50,61 +57,23 @@
     var aboutButton = document.getElementById("about-button");
     aboutButton.addEventListener('click', function() {
       change_speech("Bakalicious");
-      //showHide();
-      slideFrame(0);
+      load_page("pages/about.html")
     });
     // projectsButton
     var projectsButton = document.getElementById("projects-button");
     projectsButton.addEventListener('click', function() {
-      //showHide();
-      slideFrame(0);
+      //
     })
     // experienceButton
     var experienceButton = document.getElementById("experience-button");
     experienceButton.addEventListener('click', function() {
-      //showHide();
-      slideFrame(2);
+      //
     })
     // socialsButton
     var socialsButton = document.getElementById("socials-button");
     socialsButton.addEventListener('click', function() {
-      //showHide();
-      slideFrame(2);
+      //
     })
-    // fade options
-    var show = true;
-    function showHide() {
-      let buttonsElem = document.getElementsByClassName("cloud-button");
-      if (show == true) {
-        buttonsElem.style.animation = "2s ease-out fade-out forwards";
-        show = false;
-      } else {
-        buttonsElem.style.animation = "2s ease-out fade-in forwards";
-        show = true;
-      }
-    }
-    // slide frame
-    function slideFrame(mode) {
-      let frameElem = document.getElementById("frame");
-      switch(mode) {
-        case 0: { // c-to-l
-          frameElem.style.animation = "c-to-l 2s ease-in forwards";
-          break;
-        }
-        case 1: { // l-to-c
-          frameElem.style.animation = "l-to-c 2s ease-in forwards";
-          break;
-        }
-        case 2: { // c-to-r
-          frameElem.style.animation = "c-to-r 2s ease-in forwards";
-          break;
-        }
-        case 3: { // r-to-c
-          frameElem.style.animation = "r-to-c 2s ease-in forwards";
-          break;
-        }
-      }
-    }
     // update speech typewriter
     // MUST escape / script tag, even if its in quotes or anything similar, by \ + / script
     function change_speech(text) {
@@ -113,6 +82,18 @@
         <script>document.getElementById("typewriter").textContent = "${text}";<\/script>`;
       nodeScriptReplace(speech_var);
     }
+    // switch html div
+    /*
+    function load_html(id_name, html_path) {
+      document.getElementById(id_name).innerHTML = `<object type="text/html" data="${html_path}" ></object>`;
+    }
+    */
+    // switch html page
+    /*
+    function load_page(html_path) {
+      window.location.href = html_path;
+    }
+    */
     // recursively replace all scripts with executable ones ()
     function nodeScriptReplace(node) {
         if ( nodeScriptIs(node) === true ) {

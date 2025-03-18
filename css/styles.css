@@ -1,6 +1,8 @@
 body {
   text-align: center;
-  background-color: honeydew;
+  background-color: #939b7b;
+  border-color: #1f230c;
+  border-style: groove;
 }
 
 #typewriter {
@@ -9,9 +11,9 @@ body {
   white-space: nowrap;
   letter-spacing: 0.15em;
   animation: typewriter 3s steps(30, end);
-  font-family: "Pixelify Sans", serif;
-  font-size: 14px;
   font-weight: 200;
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+  color: #1f230c;
 }
 
 @keyframes typewriter {
@@ -25,138 +27,207 @@ body {
 
 .container {  
   display: grid;
-  grid-template-columns: 0.3fr 2.4fr 0.3fr;
-  grid-template-rows: 1.5fr 0.8fr;
+  grid-template-columns: 0.2fr 2.6fr 0.2fr;
+  grid-template-rows: 0.2fr 2.6fr 0.2fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
   grid-template-areas:
-    ". frame ."
-    ". options .";
+    ". . ."
+    ". computer ."
+    ". . .";
   margin: 0 auto;
   width: 80%;
   padding-top: 15%;
   zoom: 200%;
+  border-color: #1f230c;
+  border-style: groove;
 }
 
-.frame {  
+.computer {  
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1.8fr 0.2fr;
-  grid-template-areas:
-    "head"
-    "speech";
-  grid-area: frame;
-  animation: none;
-}
-
-@keyframes c-to-l {
-  from {
-    translate: none;
-  }
-  to {
-    translate: -50% 0;
-  }
-}
-
-@keyframes c-to-r {
-  from {
-    translate: none;
-  }
-  to {
-    translate: 50% 0;
-  }
-}
-
-@keyframes l-to-c {
-  from {
-    translate: -50% 0;
-  }
-  to {
-    translate: none;
-  }
-}
-
-@keyframes r-to-c {
-  from {
-    translate: 50% 0;
-  }
-  to {
-    translate: none;
-  }
-}
-
-.head { 
-  grid-area: head; 
-}
-
-.speech { 
-  grid-area: speech;  
-}
-
-.options {  
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 0.1fr 2.1fr 0.8fr;
+  grid-template-rows: 0.1fr 2.4fr 0.5fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "option_a . . option_d"
-    ". option_b option_c ."
-    ". . . .";
-  grid-area: options;
+    ". . ."
+    ". screen panel"
+    ". light_panel home_panel";
+  grid-area: computer;
+  border-color: #1f230c;
+  border-style: groove;
 }
 
-.option_a { 
-  grid-area: option_a;
+.screen {  
+  display: grid;
+  grid-template-columns: 0.1fr 2.9fr 0.1fr;
+  grid-template-rows: 0.1fr 2.8fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". dialogue ."
+    ". . .";
+  grid-area: screen;
+  border-color: #1f230c;
+  border-style: groove;
 }
 
-.option_b { 
-  grid-area: option_b;
+.dialogue { 
+  grid-area: dialogue; 
+  border-color: #1f230c;
+  border-style: groove;
 }
 
-.option_c { 
-  grid-area: option_c;
+.panel {  
+  display: grid;
+  grid-template-columns: 0.3fr 3.1fr 0.3fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr 0.5fr 1fr 0.5fr 4fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". button_a ."
+    ". . ."
+    ". button_b ."
+    ". . ."
+    ". button_c ."
+    ". . ."
+    ". button_d ."
+    ". . ."
+    ". avatar_frame ."
+    ". . .";
+  grid-area: panel;
+  border-color: #1f230c;
+  border-style: groove;
 }
 
-.option_d { 
-  grid-area: option_d;
+.button_b { 
+  grid-area: button_b; 
+  border-color: #1f230c;
+  border-style: groove;
 }
 
-.cloud-button {
-  background-image: url("cloud.gif");
+.button_a { 
+  grid-area: button_a; 
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.button_c { 
+  grid-area: button_c; 
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.button_d { 
+  grid-area: button_d; 
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.avatar_frame { 
+  grid-area: avatar_frame; 
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.home_panel {  
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr 0.9fr;
+  grid-template-rows: 0.6fr 1.9fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". home_button ."
+    ". . .";
+  grid-area: home_panel;
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.home_button { 
+  grid-area: home_button; 
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.light_panel {  
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1fr;
+  grid-template-rows: 1.4fr 1.2fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "light . ."
+    "turn_on . ."
+    ". . .";
+  grid-area: light_panel;
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.light {  
+  display: grid;
+  grid-template-columns: 0.3fr 2.4fr 0.3fr;
+  grid-template-rows: 0.5fr 2fr 0.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". on_light ."
+    ". . .";
+  grid-area: light;
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.on_light { 
+  grid-area: on_light; 
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.turn_on {  
+  display: grid;
+  grid-template-columns: 0.3fr 2.4fr 0.3fr;
+  grid-template-rows: 0.5fr 2.1fr 0.4fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . ."
+    ". on_button ."
+    ". . .";
+  grid-area: turn_on;
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.on_button { 
+  grid-area: on_button; 
+  border-color: #1f230c;
+  border-style: groove;
+}
+
+.retro-button {
   background-color: transparent;
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   cursor: pointer;
-  border: none;
   text-align: center;
-  font-family: "Pixelify Sans", serif;
+  font-family: monaco, Consolas, "Lucida Console", monospace;
   font-size: 10px;
   font-weight: 200;
   animation: none;
+  border-color: #1f230c;
+  border-style: groove;
+  border-width: 10%;
 }
 
-.cloud-button:hover {
+.retro-button:hover {
   transform: scale(110%);
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    display: block;
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    display: none;
-  }
 }
 
 /* Mobile */
