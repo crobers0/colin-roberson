@@ -3,42 +3,31 @@ body {
   background-color: #939b7b;
   border-color: #1f230c;
   border-style: groove;
+  justify-content: center;
 }
 
-#typewriter {
-  display: inline-block;
-  overflow: hidden;
-  border-right: .15em #1f230c;
-  white-space: nowrap;
-  letter-spacing: 0.15em;
-  animation: typewriter 4s steps(40, end), blink-carat .75s step-end infinite;
-  font-size: 14px;
+.typewriter {
   font-family: monaco, Consolas, "Lucida Console", monospace;
-  color: #1f230c;
-  text-wrap: stable;
+  font-size: 20px;
+  color:#0000;
+  background:
+    linear-gradient(-90deg,#1f230c 3px,#0000 0) 10px 0,
+    linear-gradient(#1f230c 0 0) 0 0;
+  background-size:calc(var(--n)*1ch) 200%;
+  -webkit-background-clip:padding-box,text;
+  background-clip:padding-box,text;
+  background-repeat:no-repeat;
+  animation: 
+    b .7s infinite steps(1),   
+    t calc(var(--n)*.045s) steps(var(--n)) forwards;
 }
 
-@keyframes typewriter {
-  from
-  {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+@keyframes t{
+  from {background-size:0 200%}
 }
 
-/* Cursor blink animation */
-@keyframes blink-caret {
-  from,
-  to
-  {
-      border-color: transparent;
-  }
-  50%
-  {
-      border-color: #1f230c;
-  }
+@keyframes b{
+  50% {background-position:0 -100%,0 0}
 }
 
 .container {  
@@ -51,12 +40,13 @@ body {
     ". . ."
     ". computer ."
     ". . .";
-  margin: 0 auto;
+  /*margin: 0 auto;
   width: 80%;
-  padding-top: 15%;
-  zoom: 200%;
+  */
   border-color: #1f230c;
   border-style: groove;
+  aspect-ratio: 4/3;
+  justify-self: center;
 }
 
 .computer {  
@@ -93,6 +83,7 @@ body {
   grid-area: dialogue; 
   border-color: #1f230c;
   border-style: groove;
+  text-align: left;
 }
 
 .panel {  
@@ -231,7 +222,7 @@ body {
   cursor: pointer;
   text-align: center;
   font-family: monaco, Consolas, "Lucida Console", monospace;
-  font-size: 10px;
+  font-size: 20px;
   font-weight: 200;
   animation: none;
   border-color: #1f230c;

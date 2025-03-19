@@ -10,10 +10,7 @@
     <div class="computer">
       <div class="screen">
         <div class="dialogue" id="dialogue">
-          <div id="typewriter"></div>
-            <script>
-              document.getElementById("typewriter").textContent = "hello";
-            </script>
+          <span class="typewriter" id="typewriter" style="--n:0">empty</span>
         </div>
       </div>
       <div class="panel">
@@ -66,13 +63,14 @@
   </div>
   <script>
     // todo: loading scren (prompt turn on button, "initializing colin.exe...")
+    change_speech("hello!");
     // aboutButton
     var aboutButton = document.getElementById("about-button");
-    var aboutString = 'Hi :) I\'m a third-year undergraduate at Purdue University studying CS, Bioinformatics,' +
-      ' and Korean. I can be happy learning quite about anything, and I hope to learn quite about everything in' + 
-      'my lifetime. Right now, I\'m passionate about machine learning, mathematics, music, biology, video games, ' +
-      'social and economic justice, tabletop RPGs, literature, visual arts, and foreign languages.'
     aboutButton.addEventListener('click', function() {
+      var aboutString = 'Hi :) I\'m a third-year undergraduate at Purdue University studying CS, Bioinformatics,' +
+      ' and Korean. I can be happy learning quite about anything, and I hope to learn quite about everything in' + 
+      ' my lifetime. Right now, I\'m passionate about machine learning, mathematics, music, biology, video games, ' +
+      'social and economic justice, tabletop RPGs, literature, visual arts, and foreign languages.'
       change_speech(aboutString);
     });
     // projectsButton
@@ -93,10 +91,12 @@
     // update speech typewriter
     // MUST escape / script tag, even if its in quotes or anything similar, by \ + / script
     function change_speech(text) {
-      let speech_var = document.getElementById("dialogue");
-      speech_var.innerHTML = `<div id="typewriter"></div>
-        <script>document.getElementById("typewriter").textContent = "${text}";<\/script>`;
-      nodeScriptReplace(speech_var);
+      var typewriterVar = document.getElementById("typewriter");
+      typewriterVar.style.animation = 'none';
+      typewriterVar.offsetHeight;
+      typewriterVar.style = `--n:${text.length}`;
+      typewriterVar.textContent = text;
+      nodeScriptReplace(typewriterVar);
     }
     // switch html div
     /*
