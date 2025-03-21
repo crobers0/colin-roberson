@@ -1,15 +1,12 @@
 body {
   text-align: center;
   background-color: #939b7b;
-  border-color: #1f230c;
-  border-style: groove;
-  justify-content: center;
 }
 
 .typewriter {
   font-family: monaco, Consolas, "Lucida Console", monospace;
   font-size: 20px;
-  color:#0000;
+  color:#1f230c;
   background:
     linear-gradient(-90deg,#1f230c 3px,#0000 0) 10px 0,
     linear-gradient(#1f230c 0 0) 0 0;
@@ -43,10 +40,10 @@ body {
   /*margin: 0 auto;
   width: 80%;
   */
-  border-color: #1f230c;
-  border-style: groove;
+  background-color: #1f230c;
+  max-width: 100%;
+  height: auto;
   aspect-ratio: 4/3;
-  justify-self: center;
 }
 
 .computer {  
@@ -62,6 +59,7 @@ body {
   grid-area: computer;
   border-color: #1f230c;
   border-style: groove;
+  background-color: #939b7b;
 }
 
 .screen {  
@@ -77,6 +75,7 @@ body {
   grid-area: screen;
   border-color: #1f230c;
   border-style: groove;
+  background-color: #1f230c;
 }
 
 .dialogue { 
@@ -84,6 +83,7 @@ body {
   border-color: #1f230c;
   border-style: groove;
   text-align: left;
+  background-color: #939b7b;
 }
 
 .panel {  
@@ -137,6 +137,7 @@ body {
   grid-area: avatar_frame; 
   border-color: #1f230c;
   border-style: groove;
+  align-content: center;
 }
 
 .home_panel {  
