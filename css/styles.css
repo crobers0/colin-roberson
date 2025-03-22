@@ -5,7 +5,7 @@ body {
 
 .typewriter {
   font-family: monaco, Consolas, "Lucida Console", monospace;
-  font-size: 20px;
+  font-size: auto;
   color: #0000;
   background:
     linear-gradient(-90deg,#1f230c 3px,#0000 0) 10px 0,
@@ -31,8 +31,7 @@ body {
   display: grid;
   grid-template-columns: 0.2fr 2.6fr 0.2fr;
   grid-template-rows: 0.2fr 2.6fr 0.2fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
+  grid-auto-flow: dense;
   grid-template-areas:
     ". . ."
     ". computer ."
@@ -41,9 +40,10 @@ body {
   width: 80%;
   */
   background-color: #1f230c;
-  max-width: 100%;
-  height: auto;
+  max-height: 100%;
+  width: auto;
   aspect-ratio: 4/3;
+  justify-self: center;
 }
 
 .computer {  
@@ -223,7 +223,7 @@ body {
   cursor: pointer;
   text-align: center;
   font-family: monaco, Consolas, "Lucida Console", monospace;
-  font-size: 20px;
+  font-size: auto;
   font-weight: 200;
   animation: none;
   border-color: #1f230c;
