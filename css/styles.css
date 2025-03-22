@@ -6,7 +6,7 @@ body {
 .typewriter {
   font-family: monaco, Consolas, "Lucida Console", monospace;
   font-size: 20px;
-  color:#1f230c;
+  color: #0000;
   background:
     linear-gradient(-90deg,#1f230c 3px,#0000 0) 10px 0,
     linear-gradient(#1f230c 0 0) 0 0;
