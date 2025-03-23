@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-color: #939b7b;
+  background-color: black;
 }
 
 .typewriter {
@@ -48,14 +48,14 @@ body {
 
 .computer {  
   display: grid;
-  grid-template-columns: 0.1fr 2.1fr 0.8fr;
+  grid-template-columns: 2.1fr 0.8fr;
   grid-template-rows: 0.1fr 2.4fr 0.5fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    ". . ."
-    ". screen panel"
-    ". light_panel home_panel";
+    ". ."
+    "screen panel"
+    "light_panel home_panel";
   grid-area: computer;
   border-color: #1f230c;
   border-style: groove;
@@ -107,30 +107,36 @@ body {
   grid-area: panel;
   border-color: #1f230c;
   border-style: groove;
+  background-color: #1f230c;
 }
 
 .button_a { 
   grid-area: button_a; 
   border-color: #1f230c;
   border-style: groove;
+  background-color: #939b7b;
+
 }
 
 .button_b { 
   grid-area: button_b; 
   border-color: #1f230c;
   border-style: groove;
+  background-color: #939b7b;
 }
 
 .button_c { 
   grid-area: button_c; 
   border-color: #1f230c;
   border-style: groove;
+  background-color: #939b7b;
 }
 
 .button_d { 
   grid-area: button_d; 
   border-color: #1f230c;
   border-style: groove;
+  background-color: #939b7b;
 }
 
 .avatar_frame { 
@@ -138,6 +144,10 @@ body {
   border-color: #1f230c;
   border-style: groove;
   align-content: center;
+  background-image: url("avatar-screen.png");
+  background-size: 150%;
+  background-repeat: none;
+  background-position: center;
 }
 
 .home_panel {  
