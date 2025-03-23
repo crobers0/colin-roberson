@@ -1,0 +1,9 @@
+'> Undergraduate Research Assistant, Purdue University [January 2025 to Present]: ' +
+        'Bibliometric analysis of recent cancer research publications using R.\n\n' +
+        'Undergraduate Research Assistant, VRAI Lab, Purdue University [January to May 2024]: ' +
+        'Generating large datasets for predictive models to train on. ' +
+        'Running and fine-tuning grid search programs to optimize hyperparameters.\n\n' + 
+        'Undergraduate Teaching Assistant, Purdue University [August 2023 to May 2024]: ' +                                                                               
+        'Course: “Philosophy Through Videogames” (PHIL 11005). ' +
+        'Instructing and supervising biweekly gaming lab sessions. ' +
+        'Assisting students and instructors with game technology (Nintendo Switch, PC/Steam).\n\n'

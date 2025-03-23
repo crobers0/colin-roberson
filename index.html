@@ -4,43 +4,45 @@
 <head>
   <title>Colin Roberson</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
     <div class="computer">
-      <div class="screen">
+      <div class="screen" id="screen">
         <div class="dialogue" id="dialogue">
-          <span class="typewriter" id="typewriter" style="--n:0">empty</span>
+          <span class="typewriter noselect" id="typewriter" style="--n:0">empty</span>
+          <div id="ghost"></div>
         </div>
       </div>
       <div class="panel">
         <div class="button_a">
-          <button class="retro-button" id="about-button">
+          <button class="retro-button noselect" id="about-button">
             ABOUT
           </button>
         </div>
         <div class="button_b">
-          <button class="retro-button" id="projects-button">
+          <button class="retro-button noselect" id="projects-button">
             PROJECTS
           </button>
         </div>
         <div class="button_c">
-          <button class="retro-button" id="experience-button">
+          <button class="retro-button noselect" id="experience-button">
             EXPERIENCE
           </button>
         </div>
         <div class="button_d">
-          <button class="retro-button" id="socials-button">
+          <button class="retro-button noselect" id="socials-button">
             SOCIALS
           </button>
         </div>
-        <div class="avatar_frame">
+        <div class="avatar_frame noselect">
           <img src="images\avatar.gif" style="width: 50%;">
         </div>
       </div>
       <div class="home_panel">
         <div class="home_button">
-          <button class="retro-button">
+          <button class="retro-button noselect" id="home-button">
             🏠︎
           </button>
         </div>
@@ -53,7 +55,7 @@
         </div>
         <div class="turn_on">
           <div class="on_button">
-            <button class="retro-button">
+            <button class="retro-button noselect">
               ON
             </button>
           </div>
@@ -61,35 +63,77 @@
       </div>
     </div>
   </div>
+  v.0.0.1 ----- last_updated: 3.25.2025
   <script>
     // todo: loading scren (prompt turn on button, "initializing colin.exe...")
-    change_speech("hello!");
+    // random bits
+    // foreign symbol
+    // use foreign symbols as buttons, prompt selections on screen? (pixelart)
+    // concept: small computer device made to showcase ME COLIN (e.g. pipboy)
+    change_speech("> hello!");
+    // ghost (socials buttons, etc.) clear
+    function clearGhost() {
+      var ghostElem = document.getElementById("ghost");
+      ghostElem.innerHTML = '';
+    }
     // aboutButton
     var aboutButton = document.getElementById("about-button");
     aboutButton.addEventListener('click', function() {
-      var aboutString = 'Hi :) I\'m a third-year undergraduate at Purdue University studying CS, Bioinformatics,' +
+      var aboutString = '> Hi :) I\'m a third-year undergraduate at Purdue University studying CS, Bioinformatics,' +
       ' and Korean. I can be happy learning quite about anything, and I hope to learn quite about everything in' + 
       ' my lifetime. Right now, I\'m passionate about machine learning, mathematics, cooking, music, biology, video games, ' +
-      'social and economic justice, tabletop RPGs, literature, visual arts, and foreign languages.'
+      'social and economic justice, tabletop RPGs, literature, visual arts, and foreign languages.';
       change_speech(aboutString);
+      clearGhost();
     });
     // projectsButton
     var projectsButton = document.getElementById("projects-button");
     projectsButton.addEventListener('click', function() {
-      //
-    })
+      var projectsString = '> RNA-seq Explorer: ' +
+        'Developed an R shiny web application with a team of 3 others that allows users' +
+        ' to intuitively browse various data tables and visualizations of RNA-seq and GOrilla data.\n\n' +
+        'MyShell: ' +
+        'Developed a shell interpreter based on bash using C/C++, Yacc/Lex, and UNIX system calls.\n\n' +
+        '“Intern-Ally,” BoilerMakeXI Hackathon: ' +
+        'Developed a website with a team of 3 others that allows users to search for internships' +
+        ' based on user input by webscraping LinkedIn (JavaScript, Python, HTML/CSS).';
+      change_speech(projectsString);
+      clearGhost();
+    });
     // experienceButton
     var experienceButton = document.getElementById("experience-button");
     experienceButton.addEventListener('click', function() {
-      //
-    })
+      var expString = '> Undergraduate Research Assistant [January 2025 to Present]: ' +
+        'Bibliometric analysis of recent cancer research publications using R.\n\n' +
+        'Undergraduate Research Assistant [January to May 2024]: ' +
+        'Generating large datasets for predictive models to train on. ' +
+        'Running and fine-tuning grid search programs to optimize hyperparameters.\n\n' + 
+        'Undergraduate Teaching Assistant [August 2023 to May 2024]: ' +                                                                               
+        'Course: “Philosophy Through Videogames” (PHIL 11005). ' +
+        'Instructing and supervising biweekly gaming lab sessions. ' +
+        'Assisting students and instructors with game technology (Nintendo Switch, PC/Steam).';
+      change_speech(expString);
+      clearGhost();
+    });
     // socialsButton
     var socialsButton = document.getElementById("socials-button");
     socialsButton.addEventListener('click', function() {
-      //
-    })
+      var socialsString = '> Send me a message:\n  colinroberson969 (at) gmail (dot) com\n' +
+        'or add me on the following platforms!';
+      change_speech(socialsString);
+    });
+    $(document).ready(function() {
+      $("#socials-button").on('click', function() {
+        $("#ghost").load("pages/socials.html");
+      });
+    });
+    // homeButton
+    var homeButton = document.getElementById("home-button");
+    homeButton.addEventListener('click', function() {
+      change_speech("> hello!");
+      clearGhost();
+    });
     // update speech typewriter
-    // MUST escape / script tag, even if its in quotes or anything similar, by \ + / script
     function change_speech(text) {
       var typewriterVar = document.getElementById("typewriter");
       typewriterVar.style.animation = 'none';
@@ -111,6 +155,7 @@
     }
     */
     // recursively replace all scripts with executable ones ()
+    // MUST escape / script tag, even if its in quotes or anything similar, by \ + / script
     function nodeScriptReplace(node) {
         if ( nodeScriptIs(node) === true ) {
                 node.parentNode.replaceChild( nodeScriptClone(node) , node );
@@ -138,6 +183,13 @@
             return node.tagName === 'SCRIPT';
     }
     // end recursive script replacement
+    // read text files
+    function readFile(file) {
+      const reader = new FileReader();
+      if (file) {
+        reader.readAsText(file);
+      }
+    }
   </script>
 </body>
 </html>

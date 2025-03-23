@@ -1,11 +1,27 @@
 body {
   text-align: center;
-  background-color: black;
+  background-color: darkgrey;
+  font-family: monaco, Consolas, "Lucida Console", monospace;
+  font-size: 10px;
+  color: #1f230c;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/*todo: fix text fitting
+solution: shrink larger text back to list i.e.
+*/
 .typewriter {
   font-family: monaco, Consolas, "Lucida Console", monospace;
-  font-size: auto;
+  font-size: 15px;
   color: #0000;
   background:
     linear-gradient(-90deg,#1f230c 3px,#0000 0) 10px 0,
@@ -16,7 +32,8 @@ body {
   background-repeat:no-repeat;
   animation: 
     b .7s infinite steps(1),   
-    t calc(var(--n)*.045s) steps(var(--n)) forwards;
+    t calc(var(--n)*.035s) steps(var(--n)) forwards;
+  white-space: pre-wrap;
 }
 
 @keyframes t{
@@ -36,14 +53,14 @@ body {
     ". . ."
     ". computer ."
     ". . .";
-  /*margin: 0 auto;
-  width: 80%;
-  */
-  background-color: #1f230c;
-  max-height: 100%;
+  margin: 0 auto;
+  background-color: #424d3f;
+  max-height: 75vh;
   width: auto;
   aspect-ratio: 4/3;
   align-content: center;
+  border-color: #1f230c;
+  border-style: groove;
 }
 
 .computer {  
@@ -57,9 +74,8 @@ body {
     "screen panel"
     "light_panel home_panel";
   grid-area: computer;
+  background-color: #424d3f;
   border-color: #1f230c;
-  border-style: groove;
-  background-color: #939b7b;
 }
 
 .screen {  
@@ -73,7 +89,7 @@ body {
     ". dialogue ."
     ". . .";
   grid-area: screen;
-  border-color: #1f230c;
+  border-color: #424d3f;
   border-style: groove;
   background-color: #1f230c;
 }
@@ -105,7 +121,7 @@ body {
     ". avatar_frame ."
     ". . .";
   grid-area: panel;
-  border-color: #1f230c;
+  border-color: #424d3f;
   border-style: groove;
   background-color: #1f230c;
 }
@@ -115,7 +131,6 @@ body {
   border-color: #1f230c;
   border-style: groove;
   background-color: #939b7b;
-
 }
 
 .button_b { 
@@ -140,12 +155,10 @@ body {
 }
 
 .avatar_frame { 
-  grid-area: avatar_frame; 
-  border-color: #1f230c;
-  border-style: groove;
+  grid-area: avatar_frame;
   align-content: center;
   background-image: url("avatar-screen.png");
-  background-size: 150%;
+  background-size: 110%;
   background-repeat: none;
   background-position: center;
 }
@@ -161,14 +174,16 @@ body {
     ". home_button ."
     ". . .";
   grid-area: home_panel;
-  border-color: #1f230c;
+  border-color: #424d3f;
   border-style: groove;
+  background-color: #1f230c;
 }
 
 .home_button { 
   grid-area: home_button; 
   border-color: #1f230c;
   border-style: groove;
+  background-color: #939b7b;
 }
 
 .light_panel {  
@@ -182,8 +197,9 @@ body {
     "turn_on . ."
     ". . .";
   grid-area: light_panel;
-  border-color: #1f230c;
+  border-color: #424d3f;
   border-style: groove;
+  background-color: #1f230c;
 }
 
 .light {  
@@ -199,6 +215,7 @@ body {
   grid-area: light;
   border-color: #1f230c;
   border-style: groove;
+  background-color: #939b7b;
 }
 
 .on_light { 
@@ -220,6 +237,7 @@ body {
   grid-area: turn_on;
   border-color: #1f230c;
   border-style: groove;
+  background-color: #939b7b;
 }
 
 .on_button { 
@@ -234,11 +252,8 @@ body {
   text-align: center;
   font-family: monaco, Consolas, "Lucida Console", monospace;
   font-size: auto;
-  font-weight: 200;
   animation: none;
-  border-color: #1f230c;
-  border-style: groove;
-  border-width: 10%;
+  border: transparent;
 }
 
 .retro-button:hover {
