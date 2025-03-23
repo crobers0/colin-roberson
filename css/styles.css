@@ -43,7 +43,7 @@ body {
   max-height: 100%;
   width: auto;
   aspect-ratio: 4/3;
-  justify-self: center;
+  align-content: center;
 }
 
 .computer {  
