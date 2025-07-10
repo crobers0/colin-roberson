@@ -69,11 +69,11 @@ body { background: #000; }
 
 .window { 
   position: absolute; 
-  top: 1%;
-  left: 1%;
-  right: 1%;
-  width: auto; 
-  height: calc(99% - var(--taskbar-h)); 
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  width: 50%; 
+  height: calc(50% - var(--taskbar-h)); 
   border: 1px solid var(--fg); 
   border-radius: var(--radius);
   display: none; 
@@ -84,6 +84,7 @@ body { background: #000; }
   background-size: cover;
   background-size: 100% 3px;
   transition: transform 0.1s;
+  justify-self: center;
 }
 @media screen{
   .window {
@@ -130,7 +131,7 @@ body { background: #000; }
 }
 .full-view .content { flex: 1; overflow: auto; }
 
-#taskbar { position: absolute; bottom: 0; left: 50%; width: 80%; height: var(--taskbar-h); display: flex; align-items: center; background: transparent; padding: 0 8px; z-index: 5; }
+#taskbar { position: absolute; width: 80%; height: var(--taskbar-h); display: flex; align-items: center; background: transparent; padding: 0 8px; z-index: 5; justify-self: bottom center; }
 #taskbar-tabs { display: flex; gap: 8px; }
 .taskbar-item { padding: 4px 8px; background: none; border: 1px solid var(--fg); cursor: pointer; font-size: 0.7em; border-radius: var(--radius); }
 #taskbar-time { padding: 4px; font-size: 0.7em; }
