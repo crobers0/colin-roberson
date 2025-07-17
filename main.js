@@ -5,6 +5,76 @@ document.addEventListener('DOMContentLoaded', () => {
   setupDesktop(); initBlog(); initProjects(); drawAvatar();
 });
 
+// CRT Loader Animation
+window.addEventListener('DOMContentLoaded', () => {
+  const loader = document.getElementById('crt-loader');
+  const loaderText = loader.querySelector('.crt-loader-text');
+  const loaderDim = loader.querySelector('.crt-loader-dim');
+  const crtContent = document.getElementById('crt-content');
+  const icons = document.querySelectorAll('.icon-grid .icon');
+  const loadingLines = [
+    "crobotOS v1.0 initializing...",
+    "Loading CRT desktop...",
+    "Authenticating user...",
+    "Mounting drives...",
+    "Ready."
+  ];
+  let line = 0, char = 0;
+
+  // Hide CRT content until loaded
+  crtContent.classList.add('crt-hidden');
+  icons.forEach(ic => { ic.style.opacity = 0; });
+
+  function typeLine() {
+    if (line < loadingLines.length) {
+      if (char < loadingLines[line].length) {
+        loaderText.textContent += loadingLines[line][char];
+        char++;
+        setTimeout(typeLine, 40 + Math.random()*40);
+      } else {
+        loaderText.textContent += '\n';
+        line++; char = 0;
+        setTimeout(typeLine, 400);
+      }
+    } else {
+      setTimeout(() => {
+        // Fade out the dim overlay
+        loaderDim.style.opacity = 0;
+        loader.style.opacity = 1;
+        setTimeout(() => {
+          loader.style.opacity = 0;
+          setTimeout(() => {
+            loader.remove();
+            crtContent.classList.remove('crt-hidden');
+            revealIconSequentially(0);
+          }, 600);
+        }, 2500); // Match the dim fade duration
+      }, 600);
+    }
+  }
+  typeLine();
+
+  function revealIconSequentially(index) {
+    if (index >= icons.length) return;
+    const ic = icons[index];
+    // Remove any previous animation
+    ic.style.animation = 'none';
+    ic.style.opacity = 0;
+    // Animation: 2s for faster fade-in with glitch/blink
+    ic.style.animation = 'crt-fade-glitch-blink 2s cubic-bezier(.5,2,.5,1) both';
+    // After animation, clear animation property so hover transform works
+    setTimeout(() => {
+      ic.style.opacity = 1;
+      ic.style.animation = '';
+      revealIconSequentially(index + 1);
+    }, 2000);
+    // Also, ensure hover transform is not overridden by animation
+    ic.addEventListener('mouseenter', () => {
+      ic.style.animation = '';
+    });
+  }
+});
+
 async function initStats() {
   try {
     const res = await fetch('/api/stats');
@@ -17,7 +87,7 @@ async function initStats() {
 function initClock() {
   const el = document.getElementById('taskbar-time');
   setInterval(() => {
-    el.textContent = 'local time: ' + new Date().toLocaleTimeString();
+    el.textContent = 'crobotOS.time: ' + new Date().toLocaleTimeString();
   }, 1000);
 }
 
@@ -101,9 +171,10 @@ function createCard(filename, fullText, html, previewLength) {
   card.dataset.html = html;
   card.dataset.full = fullText;
   card.dataset.filename = filename;
+  card.dataset.titleLength = title.length;
   const h4 = document.createElement('h4'); h4.textContent = title;
   const p = document.createElement('p');
-  p.textContent = fullText.slice(0, previewLength) + '...';
+  p.textContent = fullText.slice(card.dataset.titleLength, previewLength) + '...';
   card.append(h4, p);
   card.addEventListener('click', () => openFullView(card));
   return card;
@@ -148,7 +219,7 @@ async function initBlog() {
       grid.className = 'cards-grid ' + currentSize;
       grid.querySelectorAll('.card').forEach(card => {
         const len = sizeMap[currentSize];
-        card.querySelector('p').textContent = card.dataset.full.slice(0, len) + '...';
+        card.querySelector('p').textContent = card.dataset.full.slice(card.dataset.titleLength, len) + '...';
       });
     });
   });
@@ -175,7 +246,7 @@ async function initProjects() {
       grid.className = 'cards-grid ' + currentSize;
       grid.querySelectorAll('.card').forEach(card => {
         const len = sizeMap[currentSize];
-        card.querySelector('p').textContent = card.dataset.full.slice(0, len) + '...';
+        card.querySelector('p').textContent = card.dataset.full.slice(card.dataset.titleLength, len) + '...';
       });
     });
   });

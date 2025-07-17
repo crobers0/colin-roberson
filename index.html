@@ -9,6 +9,7 @@
   <script defer src="main.js"></script>
 </head>
 <body>
+  
   <div id="wrapper">
 <!--     Left info panel 
     <aside id="info-panel">
@@ -49,70 +50,74 @@
     <!-- Right “CRT desktop” -->
     <main id="crt-desktop">
       
-      <div class="crt-frame">
-
-        <div class="icon-grid">
-          <div class="icon" data-window="blog"><span><img src="img\file-note-pastel.png"><br>blog</span></div>
-          <div class="icon" data-window="socials"><span><img src="img\phone-pastel.png"><br>socials</span></div>
-          <div class="icon" data-window="projects"><span><img src="img\computer-pastel.png"><br>projects</span></div>
+      <div class="crt-frame crt-bg">
+        <div id="crt-loader" class="crt-bg">
+          <div class="crt-loader-dim"></div>
+          <span class="crt-loader-text"></span>
         </div>
+        <div id="crt-content" class="crt-hidden">
+          <div class="icon-grid">
+            <div class="icon" data-window="blog"><span><img src="img\file-note-pastel.png"><br>blog</span></div>
+            <div class="icon" data-window="socials"><span><img src="img\phone-pastel.png"><br>socials</span></div>
+            <div class="icon" data-window="projects"><span><img src="img\computer-pastel.png"><br>projects</span></div>
+          </div>
 
-        <div class="window" id="blog">
-          <header>
-            <h3>blog</h3>
-            <div class="controls">
-              <button class="minimize">_</button>
-              <button class="close">×</button>
+          <div class="window" id="blog">
+            <header>
+              <h3>blog</h3>
+              <div class="controls">
+                <button class="minimize">_</button>
+                <button class="close">×</button>
+              </div>
+            </header>
+            <div class="view-controls">
+              <button data-size="small">small</button>
+              <button data-size="medium" class="active">medium</button>
+              <button data-size="large">large</button>
             </div>
-          </header>
-          <div class="view-controls">
-            <button data-size="small">small</button>
-            <button data-size="medium" class="active">medium</button>
-            <button data-size="large">large</button>
-          </div>
-          <div class="cards-grid medium" id="blog-cards"></div>
-          <div class="full-view" id="blog-view" style="display:none;">
-            <button class="back">←</button>
-            <div class="content" id="blog-content"></div>
-          </div>
-        </div>
-
-        <div class="window" id="socials">
-          <header>
-            <h3>socials</h3>
-            <div class="controls">
-              <button class="minimize">_</button>
-              <button class="close">×</button>
+            <div class="cards-grid medium" id="blog-cards"></div>
+            <div class="full-view" id="blog-view" style="display:none;">
+              <button class="back">←</button>
+              <div class="content" id="blog-content"></div>
             </div>
-          </header>
-          <div class="content">Links to Twitter, GitHub, LinkedIn…</div>
-        </div>
+          </div>
 
-        <div class="window" id="projects">
-          <header>
-            <h3>projects &amp; experience</h3>
-            <div class="controls">
-              <button class="minimize">_</button>
-              <button class="close">×</button>
+          <div class="window" id="socials">
+            <header>
+              <h3>socials</h3>
+              <div class="controls">
+                <button class="minimize">_</button>
+                <button class="close">×</button>
+              </div>
+            </header>
+            <div class="content">Links to Twitter, GitHub, LinkedIn…</div>
+          </div>
+
+          <div class="window" id="projects">
+            <header>
+              <h3>projects &amp; experience</h3>
+              <div class="controls">
+                <button class="minimize">_</button>
+                <button class="close">×</button>
+              </div>
+            </header>
+            <div class="view-controls">
+              <button data-size="small">small</button>
+              <button data-size="medium" class="active">medium</button>
+              <button data-size="large">large</button>
             </div>
-          </header>
-          <div class="view-controls">
-            <button data-size="small">small</button>
-            <button data-size="medium" class="active">medium</button>
-            <button data-size="large">large</button>
+            <div class="cards-grid medium" id="project-cards"></div>
+            <div class="full-view" id="projects-view" style="display:none;">
+              <button class="back">←</button>
+              <div class="content" id="project-content"></div>
+            </div>
           </div>
-          <div class="cards-grid medium" id="project-cards"></div>
-          <div class="full-view" id="projects-view" style="display:none;">
-            <button class="back">←</button>
-            <div class="content" id="project-content"></div>
+
+          <div id="taskbar">
+            <div id="taskbar-tabs"></div>
+            <div id="taskbar-time">crobotOS.time: --:--:--</div>
           </div>
-        </div>
-
-        <div id="taskbar">
-          <div id="taskbar-tabs"></div>
-          <div id="taskbar-time">local_time: --:--:--</div>
-        </div>
-
+        </div> 
       </div>
     </main>
   </div>
