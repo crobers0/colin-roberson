@@ -81,7 +81,7 @@ body { background: #000; }
   left: 5%;
   right: 5%;
   width: 85%; 
-  height: calc(85% - var(--taskbar-h)); 
+  height: calc(82% - var(--taskbar-h)); 
   border: 1px solid var(--fg); 
   border-radius: var(--radius);
   display: none; 
@@ -254,7 +254,7 @@ body { background: #000; }
   animation: scanlines infinite 20s linear;
   position: absolute;
   top: 10%;
-  left: 5%;
+  left: 10%;
   z-index: 2;
 }
 
